@@ -12,27 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
-
-Route::get('about',function (){
-   return view('about');
-})->name('acerca');
-
-Route::get('Contact', function (){
-   return view('Contact');
-})->name('contacto');
-
-Route::get('Post',function (){
-    return view('Post');
-})->name('Post');
-
-Route::get('home', [
-    'as' => 'home',
-    'uses' => 'HomeController@index'
-]);
-
-Auth::routes();
-
-Route::get('activate/{token}', 'Auth\[email protected]')
-    ->name('activate');
