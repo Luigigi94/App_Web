@@ -14,3 +14,29 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::any('Imagen/{argumento?}', function ($argumento='Argumentamesta') {
+     echo 'Pagina Imagen con argumento: '.$argumento;
+})->name('Imagen');
+
+Route::any('Categoria/{argumento?}', function($argumento='Argumentamesta'){
+
+})->name('Categoria');
+
+Route::any('Galeria/{argumento?}', function ($argumento='Argumentamesta'){
+
+})->name('Galeria');
+
+Route::any('Usuario/{argumento?}', function ($argumento='asdf'){
+
+})->name('Usuario');
+
+Route::any('Sexo/{argumento?}', function ($argumento='asdf'){
+
+})->name('Sexo');
+
+Route::any('Asigna_galeria/{argumento?}', function ($argumento='asdf'){
+
+})->name('Asigna_galeria');
+
+
