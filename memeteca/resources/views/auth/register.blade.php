@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title')
+    Registro
+    @endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -58,6 +60,51 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="nombre_real" class="col-md-4 col-form-label text-md-right">{{ __('Nombre Real') }}</label>
+
+                            <div class="col-md-6">
+                                <input type="text" id="nombre_real" class="form-control" name="nombre_real" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="ap_p" class="col-md-4 col-form-label text-md-right">{{ __('Apellido Paterno') }}</label>
+
+                            <div class="col-md-6">
+                                <input type="text" id="ap_p" class="form-control" name="ap_p" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="ap_m" class="col-md-4 col-form-label text-md-right">{{ __('Apellido Materno') }}</label>
+
+                            <div class="col-md-6">
+                                <input type="text" id="ap_am" class="form-control" name="ap_m" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="edad" class="col-md-4 col-form-label text-md-right">{{ __('edad') }}</label>
+
+                            <div class="col-md-6">
+                                <input type="text" id="edad" class="form-control" name="edad" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                                <label class="form-check-label" for="inlineRadio1">Hombre</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                                <label class="form-check-label" for="inlineRadio2">Mujer</label>
                             </div>
                         </div>
 
