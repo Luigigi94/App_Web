@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class NewAsignaGaleriaTable extends Migration
+class CreateSexsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class NewAsignaGaleriaTable extends Migration
      */
     public function up()
     {
-        Schema::create('asigna_galeria', function (Blueprint $table) {
-            $table->increments('id_asigna');
-            $table->integer('id_imagen')->unsigned();
-            $table->integer('id_galeria')->unsigned();
+        Schema::create('sexs', function (Blueprint $table) {
+            $table->increments('id_sex');
+            $table->string('genero',50);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class NewAsignaGaleriaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asigna_galeria');
+        Schema::dropIfExists('sexs');
     }
 }

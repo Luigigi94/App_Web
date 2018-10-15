@@ -12,14 +12,15 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-           'name' => 'Luigigi',
-            'email' => 'a@c',
-            'password' => '123456',
-            'nombre_real' => 'Luis',
-            'ap_p' => 'Hernandez',
-            'edad' => '23',
-            'id_sexo' => 1
-        ]);
+//
+//        DB::table('users')->insert([
+//           'name' => 'Luigigi',
+//            'email' => 'a@c',
+//            'password' => '123456',
+//            'nombre_real' => 'Luis',
+//            'ap_p' => 'Hernandez',
+//            'edad' => '23',
+//            'id_sexo' => 1
+//        ]);
     }
 }

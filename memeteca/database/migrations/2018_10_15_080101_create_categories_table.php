@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class NewSexoTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class NewSexoTable extends Migration
      */
     public function up()
     {
-        Schema::create('sexo', function (Blueprint $table) {
-            $table->increments('id_sexo');
-            $table->string('genero');
+        Schema::create('categories', function (Blueprint $table) {
+            $table->increments('id_category');
+            $table->string('desc_categoria',50);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class NewSexoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sexo');
+        Schema::dropIfExists('categories');
     }
 }

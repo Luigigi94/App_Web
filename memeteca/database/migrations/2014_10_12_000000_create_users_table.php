@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->string('ap_m',90)->nullable();
             $table->integer('edad');
             $table->integer('id_sexo');
-
             $table->rememberToken();
             $table->timestamps();
         });
