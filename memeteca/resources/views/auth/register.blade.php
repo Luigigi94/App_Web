@@ -10,11 +10,11 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ url('/register') }}" autocomplete="off">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nickname') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -62,9 +62,9 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
-                            <label for="nombre_real" class="col-md-4 col-form-label text-md-right">{{ __('Nombre Real') }}</label>
+                            <label for="nombre_real" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
                                 <input type="text" id="nombre_real" class="form-control" name="nombre_real" required>
@@ -99,11 +99,11 @@
                             <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                                <input class="form-check-input" type="radio" name="id_sexo" id="inlineRadio1" value="1">
                                 <label class="form-check-label" for="inlineRadio1">Hombre</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                                <input class="form-check-input" type="radio" name="id_sexo" id="inlineRadio2" value="2">
                                 <label class="form-check-label" for="inlineRadio2">Mujer</label>
                             </div>
                         </div>
