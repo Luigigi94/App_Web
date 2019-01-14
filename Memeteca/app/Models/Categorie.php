@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Profession extends Model
+class Categorie extends Model
 {
-    protected $fillable = [
-      'nombre',
+    protected $fillable=[
+        'desc_categoria',
     ];
 }

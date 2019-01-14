@@ -16,11 +16,25 @@ class DatabaseSeeder extends Seeder
 
         $this->TruncateTable([
             'elusers',
-            'professions'
+            'professions',
+            'sexs',
+            'categories',
+            'users',
+            'galeries',
+            'images',
+            'asign_galeries'
         ]);
 
         $this->call(ProfessionSeeder::class);
         $this->call(eluserSeeder::class);
+        $this->call(SexSeeder::class);
+        $this->call(CategoriesSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(GaleriesSeeder::class);
+        $this->call(ImagesSeeder::class);
+        $this->call(Asign_GaleriesSeeder::class);
+
+
     }
 
     public function TruncateTable(array $tables): void

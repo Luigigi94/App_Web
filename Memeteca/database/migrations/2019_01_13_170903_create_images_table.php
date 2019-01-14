@@ -17,7 +17,6 @@ class CreateImagesTable extends Migration
             $table->increments('id');
             $table->string('nombre_imagen',50);
             $table->text('imagen');
-            $table->integer('id_categoria');
             $table->float('puntuacion');
             $table->timestamps();
         });

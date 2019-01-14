@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Eluser extends Model
+class Galerie extends Model
 {
     protected $fillable = [
-        'nombre','email','password','profession_id',
+        'nombre','user_id',
     ];
 }

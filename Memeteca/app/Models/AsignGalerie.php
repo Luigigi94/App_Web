@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Eluser extends Model
+class AsignGalerie extends Model
 {
+    protected $table='asign_galeries';
+
     protected $fillable = [
-        'nombre','email','password','profession_id',
+      'image_id','galery_id',
     ];
 }
