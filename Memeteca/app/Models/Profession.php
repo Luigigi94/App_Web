@@ -12,6 +12,6 @@ class Profession extends Model
 
     public function elusers()
     {
-        return $this->hasMany(Eluser::class);
+        return $this->hasMany(Usuario::class);
     }
 }

@@ -30,5 +30,7 @@ class UserSeeder extends Seeder
             'sex_id' => $sexid,
 
         ]);
+
+        factory(User::class)->times(20)->create();
     }
 }

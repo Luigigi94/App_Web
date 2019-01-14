@@ -21,5 +21,7 @@ class GaleriesSeeder extends Seeder
             'nombre' => 'Escuela',
             'user_id' => $userid,
         ]);
+
+        factory(Galerie::class)->times(15)->create();
     }
 }

@@ -27,5 +27,7 @@ class CategoriesSeeder extends Seeder
         Categorie::create([
             'desc_categoria' => 'Caricaturas'
         ]);
+
+        factory(Categorie::class)->times(15)->create();
     }
 }

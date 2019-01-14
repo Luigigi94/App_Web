@@ -32,5 +32,11 @@ class ImagesSeeder extends Seeder
             'puntuacion' => '2',
             'category_id' => $category_id,
         ]);
+
+        factory(Image::class)->times(15)->create([
+            'imagen' => 'Aqui va un memazo',
+        ]);
+
+
     }
 }

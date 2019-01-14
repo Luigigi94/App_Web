@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Eluser extends Model
+class Usuario extends Model
 {
+
+    protected $table='usuario';
 
     use Notifiable;
 
@@ -24,16 +26,18 @@ class Eluser extends Model
 
     public function isAdmin()
     {
-        return $this->email === 'el.luige94@gmail.com';
+        return $this->is_admin;
     }
 
     public static function findByEmail($email)
     {
-        return static::where(compact('email'))->first();
+//        return static::where(compact('email'))->first();
     }
 
     public function profession()
     {
         return $this->belongsTo(Profession::class);
     }
+
+
 }

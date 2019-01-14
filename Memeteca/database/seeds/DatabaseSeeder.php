@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,7 +16,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
 
         $this->TruncateTable([
-            'elusers',
+            'usuario',
             'professions',
             'sexs',
             'categories',
@@ -26,13 +27,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(ProfessionSeeder::class);
-        $this->call(eluserSeeder::class);
+//        $this->call(eluserSeeder::class);
         $this->call(SexSeeder::class);
         $this->call(CategoriesSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(GaleriesSeeder::class);
         $this->call(ImagesSeeder::class);
         $this->call(Asign_GaleriesSeeder::class);
+        $this->call(UsuarioSeeder::class);
 
 
     }

@@ -21,5 +21,8 @@ class Asign_GaleriesSeeder extends Seeder
             'image_id' => $image_id,
             'galery_id' => $galery_id,
         ]);
+
+        factory(AsignGalerie::class)->times(15)->create();
+
     }
 }
