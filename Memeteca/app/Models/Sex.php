@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Sex extends Model
@@ -12,4 +13,9 @@ class Sex extends Model
     protected $fillable = [
       'genero',
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

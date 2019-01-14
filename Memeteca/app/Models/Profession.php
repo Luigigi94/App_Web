@@ -9,4 +9,9 @@ class Profession extends Model
     protected $fillable = [
       'nombre',
     ];
+
+    public function elusers()
+    {
+        return $this->hasMany(Eluser::class);
+    }
 }

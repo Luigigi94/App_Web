@@ -11,4 +11,14 @@ class AsignGalerie extends Model
     protected $fillable = [
       'image_id','galery_id',
     ];
+
+    public function as_images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+    public function as_galery()
+    {
+        return $this->hasMany(Galerie::class);
+    }
 }

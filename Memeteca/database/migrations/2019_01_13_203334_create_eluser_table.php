@@ -18,7 +18,7 @@ class CreateEluserTable extends Migration
             $table->string('nombre',50);
             $table->string('email',50)->unique();
             $table->string('password',100);
-//            $table->unsignedInteger('profession_id')->nullable();
+            $table->boolean('is_admin')->default(false);
             $table->timestamps();
         });
     }

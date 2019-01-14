@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\Galerie;
+use App\Models\Sex;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -29,4 +31,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function sex()
+    {
+        return $this->belongsTo(Sex::class);
+    }
+
+    public function galeries()
+    {
+        return $this->hasMany(Galerie::class);
+    }
 }
