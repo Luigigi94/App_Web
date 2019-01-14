@@ -15,8 +15,7 @@ class CreateAsignGaleriesTable extends Migration
     {
         Schema::create('asign_galeries', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_images');
-            $table->integer('id_galery');
+
             $table->timestamps();
         });
     }

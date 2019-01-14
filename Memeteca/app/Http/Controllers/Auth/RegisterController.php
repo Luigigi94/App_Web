@@ -49,7 +49,7 @@ class RegisterController extends Controller
             'Apellido_Paterno' => ['required','string','min:6','max:255'],
             'Apellido_Materno' => ['required','string','min:6','max:255'],
             'Edad' => ['required','integer','max:3'],
-            'id_sexo' => ['required|in:1,2'],
+//            'id_sexo' => ['required|in:1,2'],
         ]);
     }
     /**

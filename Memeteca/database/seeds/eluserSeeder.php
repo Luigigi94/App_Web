@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Profession;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\ElUser;
 
 class eluserSeeder extends Seeder
 {
@@ -16,12 +18,10 @@ class eluserSeeder extends Seeder
 //        $professions=DB::table('professions')->select('id')->take(1)->get(); take =  toma 1 solo resultado
 //        $profession=DB::table('professions')->select('id')->first(); //para seleccionar el primer resultado
 //        dd($profession);
-        $professionid=DB::table('professions')
-            ->where('nombre', 'Back-end Developer')
-            ->value('id');
+        $professionid=Profession::where('nombre', 'Back-end Developeres')->value('id');
 
 //        dd($professionid);
-        DB::table('eluser')->insert([
+        ElUser::create([
             'nombre' => 'Luis',
             'email' => 'el.luige94@gmail.com',
             'password' => bcrypt('Lui-_-G1994'),

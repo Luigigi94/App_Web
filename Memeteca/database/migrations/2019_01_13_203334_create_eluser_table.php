@@ -13,7 +13,7 @@ class CreateEluserTable extends Migration
      */
     public function up()
     {
-        Schema::create('eluser', function (Blueprint $table) {
+        Schema::create('elusers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',50);
             $table->string('email',50)->unique();
@@ -30,6 +30,6 @@ class CreateEluserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eluser');
+        Schema::dropIfExists('elusers');
     }
 }

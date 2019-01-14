@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
 
         $this->TruncateTable([
-            'eluser',
+            'elusers',
             'professions'
         ]);
 
