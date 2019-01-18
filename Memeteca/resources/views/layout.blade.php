@@ -6,21 +6,24 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>@yield('title') - Memeteca</title>
+    <title>{{$title}} - Memeteca</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    {{--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--}}
 
     <!-- Custom styles for this template -->
     <link href={{ asset("css/style.css") }} rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/offcanvas.css') }}">
     <link rel="stylesheet" href="{{ asset('css/signin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.css') }}">
+
 </head>
 <body class="d-flex flex-column h-100">
 <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="{{ url('/home') }}">Memeteca</a>
+        <a class="navbar-brand" href="{{ url('/') }}">Memeteca</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,13 +37,40 @@
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-            @if(Route::has('login'))
-                @auth
-                    <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
-                 @endauth
-             @endif
+            @guest
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    </li>
+
+            {{--@if(Route::has('login'))--}}
+                @if(Route::has('register'))
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                 @endif
+            @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+
+                </ul>
+            @endguest
         </div>
     </nav>
 </header>
@@ -50,13 +80,13 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col-8">
-                @yield('content')
+                {{ $content }}
             </div>
-            <div class="col-4">
-                @section('sidebar')
-                    <h2>Barra Lateral</h2>
-                @show
-            </div>
+            {{--<div class="col-4">--}}
+                {{--@section('sidebar')--}}
+                    {{--<h2>Barra Lateral</h2>--}}
+                {{--@show--}}
+            {{--</div>--}}
         </div>
     </div>
 </main>

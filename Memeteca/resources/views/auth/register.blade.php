@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+@extends('layout')
+@section('title','Registro')
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -94,14 +94,14 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="id_sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
+                                <label for="sex_id" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
 
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="id_sexo" id="inlineRadio1" value="1">
+                                    <input class="form-check-input" type="radio" name="sex_id" id="inlineRadio1" value="1">
                                     <label class="form-check-label" for="inlineRadio1">Hombre</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="id_sexo" id="inlineRadio2" value="2">
+                                    <input class="form-check-input" type="radio" name="sex_id" id="inlineRadio2" value="2">
                                     <label class="form-check-label" for="inlineRadio2">Mujer</label>
                                 </div>
                             </div>

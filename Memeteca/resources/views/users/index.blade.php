@@ -1,19 +1,44 @@
-@extends('layout')
-@section('title','Usuarios')
-@section('content')
+@component('layout')
+@slot('title')
+    Usuarios
+@endslot
+@slot('content')
     <h1>{{ $title }}</h1>
 
-    <ul>
-        @forelse($users as $user)
-            <li>{{ $user->name }} <a href="{{ route('users.show',['id'=>$user->id]) }}">Ver Detallones</a></li>
-        @empty
-            <li>No hay usuarios Registrados</li>
-        @endforelse
-    </ul>
-@endsection
+    <p><a href="{{route('users.create')}}">
+            Crear
+        </a></p>
 
-@section('sidebar')
-    @parent
-    <h2>Orales</h2>
-    <p>Utilizando el parametro "@paren,t" para escribir: orales</p>
-@endsection
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Nick</td>
+                    <td>Correo</td>
+                    <td>Nombre</td>
+                    <td>Apellido Paterno</td>
+                    <td>Apellido Materno</td>
+                    <td>Edad</td>
+                    <td>Sexo</td>
+                    <td>update</td>
+                    <td>delete</td>
+                </tr>
+            </thead>
+            <tbody id="bodytable">
+            {{--@section('tablas')@endsection--}}
+            @include('users.tabla')
+
+            </tbody>
+        </table>
+    </div>
+@endslot
+@endcomponent
+
+{{--<script type="text/javascript">--}}
+    {{--$(document).ready(function () {--}}
+        {{--$("#bodytable").on('click',"button#cut",function () {--}}
+            {{----}}
+        {{--})--}}
+    {{--})--}}
+{{--</script>--}}
+

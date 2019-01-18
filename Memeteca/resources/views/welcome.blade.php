@@ -108,7 +108,7 @@
 @section('sidebar')
      <div class="card h-125">
          <div class="card-title" align="center">
-             Imagen
+             Imagen del Día
          </div>
          <a><img class="img-responsive center-block" width="253px" height="135px" ></a>
          <div class="card-body" align="center">
