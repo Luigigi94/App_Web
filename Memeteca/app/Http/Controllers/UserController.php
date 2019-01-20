@@ -5,15 +5,13 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\DataTables;
 
 class UserController extends Controller
 {
     public function index()
     {
-//       $users = DB::table('users')->get(); Así se cargan los datos con consulta de Facades\DB
         $users = User::all();
-
-//       dd($users);
 
         $title='Listado de Usuarios Registrados';
 
@@ -29,7 +27,7 @@ class UserController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'name' => 'required',
+            'name' => 'required|unique:users,name',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
             'Nombre_Real' => 'required',
@@ -47,8 +45,6 @@ class UserController extends Controller
             'Edad' => 'El campo Edad es requiredo',
             'sex_id' => 'El campo Sexo es requiredo',
         ]);
-
-
         User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -59,9 +55,7 @@ class UserController extends Controller
             'Edad' => $data['Edad'],
             'sex_id' => $data['sex_id'],
         ]);
-
 //        dd($data);
-
         return redirect('usuarios');
     }
 
@@ -70,9 +64,11 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function edit(User $user)
+    public function edit($id)
     {
-        return view('users.edit', ['user' => $user]);
+        $users= User::find($id);
+
+        return $users;
     }
 
     public function update(User $user)
@@ -113,5 +109,16 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect()->route('users.index');
+    }
+
+    public function alluser()
+    {
+        $users= User::all();
+        return Datatables::of($users)
+            ->addColumn('Action',function ($users){
+                '<a onclick="'.$users->id.'" class="btn btn-xs btn-primary">Edit</a>';
+            })
+            ->make(true)
+        ;
     }
 }
